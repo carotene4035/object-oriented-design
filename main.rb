@@ -44,10 +44,18 @@ class MoutainBike < Bicycle
 
 end
 
+
+road_bike = RoadBike.new(
+  size: 'M',
+  tape_color: 'red',
+)
+road_bike.size
+
 mountain_bike = MoutainBike.new(
   size: 'S',
   front_shock: 'Manitou',
   rear_shock: 'Fox')
 
 mountain_bike.size
+# NoMethodError: undefined method 'size' <- そりゃそうだよ
 mountain_bike.spares
