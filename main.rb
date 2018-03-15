@@ -16,17 +16,11 @@ class RoadBike < Bicycle
     super(args) # RoadBikeはsuperを必ずよばなくてはならなくなった
   end
 
-#  def spares
-#    if style == :road
-#      { chain: '10-speed',
-#        tire_size: '23', # milimeters
-#        tape_color: tape_color }
-#    else
-#      { chain: '10-speed',
-#        tire_size: '2.1', # inches,
-#      rear_shock: rear_shock }
-#    end
-#  end
+  def spares
+      { chain: '10-speed',
+        tire_size: '23', # milimeters
+        tape_color: tape_color }
+  end
 end
 
 class MoutainBike < Bicycle
@@ -39,7 +33,7 @@ class MoutainBike < Bicycle
   end
 
   def spares
-    super.merge(rear_shock: rear_shock)
+    super.merge({rear_shock: rear_shock})
   end
 
 end
@@ -58,4 +52,6 @@ mountain_bike = MoutainBike.new(
 
 mountain_bike.size
 # NoMethodError: undefined method 'size' <- そりゃそうだよ
-# mountain_bike.spares
+#
+mountain_bike.spares
+# NoMethodError: super: no superclass method 'spares'
