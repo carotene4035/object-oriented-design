@@ -1,9 +1,11 @@
 class Bicycle
-  attr_reader :size # RoadBikeから昇格
+  attr_reader :size, :chain, :tire_size
   # コードはすべてRoadBikeにうつされた
   #
-  def initialize(args)
-    @size        = args[:size]
+  def initialize(args={})
+    @size      = args[:size]
+    @chain     = args[:chain]
+    @tire_size = args[:tire_size]
   end
 end
 
