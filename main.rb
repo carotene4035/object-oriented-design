@@ -1,4 +1,9 @@
 class Bicycle
+  # コードはすべてRoadBikeにうつされた
+end
+
+class RoadBike < Bicycle
+  # かつてのBicycleクラスからのコードを全て含む
   attr_reader :size, :tape_color,
     :front_shock, :rear_shock, :style
 
@@ -23,7 +28,6 @@ class Bicycle
     end
   end
 end
-
 
 class MoutainBike < Bicycle
   attr_reader :front_shock, :rear_shock
