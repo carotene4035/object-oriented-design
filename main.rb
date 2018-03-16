@@ -11,6 +11,14 @@ class Bicycle
   def default_chain # 共通の初期値
     '10-speed'
   end
+
+  # サブクラスにこのメソッドがなかった場合、このメソッドが実行され、
+  # 例外が投げられる
+  def default_tire_size
+    raise NotImplementedError,
+      "This #{self.class} cannot respond to:"
+  end
+
 end
 
 class RoadBike < Bicycle
@@ -55,7 +63,7 @@ end
 
 road_bike = RoadBike.new(
   size: 'M',
-  tape_color: 'red',
+  tape_color: 'red'
 )
 road_bike.size
 
